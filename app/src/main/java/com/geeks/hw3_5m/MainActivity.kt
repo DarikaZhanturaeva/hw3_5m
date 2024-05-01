@@ -8,6 +8,7 @@ import com.geeks.hw3_5m.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), CharactersView {
 
+
     private lateinit var binding: ActivityMainBinding
     private val presenter by lazy {
         CharacterPresenter(
