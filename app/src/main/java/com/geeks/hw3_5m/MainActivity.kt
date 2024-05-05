@@ -8,13 +8,13 @@ import com.geeks.hw3_5m.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), CharactersView {
 
-
     private lateinit var binding: ActivityMainBinding
     private val presenter by lazy {
         CharacterPresenter(
             CharactersDataSourceFactory()
         )
     }
+    private var characterAdapter = CharacterAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity(), CharactersView {
     }
 
     override fun getCharacters(data: LiveData<PagedList<Character>>) {
-        data.observe(this){
+        data.observe(this) {
+            binding.rvCharacter.adapter = characterAdapter
 
         }
     }

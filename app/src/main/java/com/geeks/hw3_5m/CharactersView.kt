@@ -5,6 +5,6 @@ import androidx.paging.PagedList
 
 interface CharactersView {
 
-    fun getCharacters(items:LiveData<PagedList<Character>>)
+    fun getCharacters(data:LiveData<PagedList<Character>>)
 
 }
